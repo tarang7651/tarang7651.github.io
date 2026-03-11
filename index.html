@@ -22,6 +22,7 @@
   --lime:    #c8f135;
   --lime2:   #a8d420;
   --gold:    #f5c842;
+  --violet:  #a78bfa;
   --r: 8px;
 }
 html { scroll-behavior: smooth; }
@@ -102,9 +103,15 @@ h2.sec-title { font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px
 .skill-cell { background:var(--surface);padding:26px 26px 22px;transition:background .2s; }
 .skill-cell:hover { background:var(--raised); }
 .skill-cell-head { display:flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--border); }
+/* AI cell gets a violet tint to stand out */
+.skill-cell.ai-cell { background: rgba(167,139,250,.03); }
+.skill-cell.ai-cell:hover { background: rgba(167,139,250,.07); }
+.skill-cell.ai-cell .skill-cell-head { color: var(--violet); border-bottom-color: rgba(167,139,250,.2); }
 .chip-wrap { display:flex;flex-wrap:wrap;gap:5px; }
 .chip { background:var(--raised);border:1px solid var(--border2);color:var(--dim);font-size:.71rem;padding:3px 9px;border-radius:4px;letter-spacing:.03em;transition:all .2s; }
 .chip:hover { background:rgba(200,241,53,.08);border-color:rgba(200,241,53,.3);color:var(--lime); }
+.chip.ai { background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2);color:#c4b5fd; }
+.chip.ai:hover { background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.5);color:var(--violet); }
 
 /* EXPERIENCE */
 #experience { background:var(--black); }
@@ -117,10 +124,31 @@ h2.sec-title { font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px
 .exp-dates { text-align:right;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em; }
 .exp-awards { display:flex;gap:8px;flex-wrap:wrap;padding:14px 34px;border-bottom:1px solid var(--border);background:rgba(245,200,66,.025); }
 .award-tag { display:inline-flex;align-items:center;gap:5px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.2);color:var(--gold);font-size:.68rem;padding:3px 10px;border-radius:100px;letter-spacing:.04em; }
-.exp-points { padding:26px 34px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;list-style:none; }
+.exp-section { border-bottom: 1px solid var(--border); }
+.exp-section:last-child { border-bottom: none; }
+.exp-section-title {
+  padding: 14px 34px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: .64rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--lime);
+  background: rgba(200,241,53,.03);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.exp-section-title::before { content:''; width:14px; height:1px; background:var(--lime); }
+.exp-section-title.ai-section { color: var(--violet); background: rgba(167,139,250,.04); }
+.exp-section-title.ai-section::before { background: var(--violet); }
+.exp-points { padding:20px 34px 24px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;list-style:none; }
 .exp-points li { font-size:.81rem;line-height:1.72;color:var(--dim);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:11px; }
 .exp-points li:last-child { border-bottom:none; }
 .exp-points li::before { content:'→';color:var(--lime);flex-shrink:0;font-size:.78rem;margin-top:2px; }
+.exp-points li.ai-point::before { content:'◆';color:var(--violet); }
+.hl { color: var(--text); font-weight: 500; }
+.hl-ai { color: #c4b5fd; font-weight: 500; }
 
 /* PROJECTS */
 #projects { background:var(--ink); }
@@ -129,14 +157,17 @@ h2.sec-title { font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px
 .proj-card:hover { background:var(--raised); }
 .proj-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .4s ease; }
 .proj-card:hover::before { transform:scaleX(1); }
+.proj-card.ai-card::before { background: linear-gradient(90deg, var(--violet), var(--lime)); }
 .proj-num { font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:1;color:var(--border2);position:absolute;bottom:14px;right:18px;user-select:none;transition:color .3s; }
 .proj-card:hover .proj-num { color:rgba(200,241,53,.07); }
 .proj-ico { width:38px;height:38px;background:var(--raised);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:18px;transition:border-color .3s; }
 .proj-card:hover .proj-ico { border-color:rgba(200,241,53,.3); }
+.proj-card.ai-card:hover .proj-ico { border-color:rgba(167,139,250,.4); }
 .proj-name { font-family:'DM Sans',sans-serif;font-weight:500;font-size:.91rem;color:var(--white);line-height:1.35;margin-bottom:9px; }
 .proj-desc { font-size:.76rem;line-height:1.72;color:var(--muted);margin-bottom:18px;flex:1; }
 .proj-stack { display:flex;flex-wrap:wrap;gap:4px; }
 .stack-tag { font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.04em;color:var(--muted);background:var(--black);border:1px solid var(--border);padding:2px 7px;border-radius:3px; }
+.stack-tag.ai { color:#c4b5fd;background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2); }
 .proj-card.feat { grid-column:span 2;background:var(--raised); }
 .proj-card.feat .proj-name { font-size:1.05rem; }
 
@@ -184,23 +215,90 @@ footer em { color:var(--lime);font-style:normal; }
 
 @media(max-width:900px){
   .hero-layout{grid-template-columns:1fr;}
-  .hero-right{border-left:none;border-top:1px solid var(--border);padding:36px 0 0;flex-direction:row;flex-wrap:wrap;height:auto;}
-  .stat-row{border-bottom:none;padding:18px 28px 18px 0;border-right:1px solid var(--border);margin-right:28px;}
-  .stat-row:last-child{border-right:none;}
+  .hero-right{border-left:none;border-top:1px solid var(--border);padding:32px 0 0;flex-direction:row;flex-wrap:wrap;height:auto;gap:0;}
+  .stat-row{border-bottom:none;padding:16px 24px 16px 0;border-right:1px solid var(--border);margin-right:24px;}
+  .stat-row:last-child{border-right:none;margin-right:0;}
+  .stat-val{font-size:2.2rem;}
   .skills-table,.proj-grid,.cert-grid{grid-template-columns:1fr 1fr;}
   .proj-card.feat{grid-column:span 2;}
   .contact-inner{grid-template-columns:1fr;gap:44px;}
   .exp-points{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
-  .wrap,.contact-inner,nav,footer{padding-left:20px;padding-right:20px;}
-  .hero-layout{padding:0 20px;}
-  .skills-table,.proj-grid,.cert-grid{grid-template-columns:1fr;}
-  .proj-card.feat{grid-column:span 1;}
-  .edu-row{grid-template-columns:1fr;gap:4px;}
-  .edu-yr{text-align:left;}
+  /* Nav */
+  nav{padding:0 16px;}
   nav .nav-pill{display:none;}
   nav .nav-status{display:none;}
+
+  /* Global spacing */
+  .wrap{padding-left:16px;padding-right:16px;}
+  .contact-inner{padding-left:16px;padding-right:16px;grid-template-columns:1fr;gap:40px;}
+  footer{padding:18px 16px;flex-direction:column;gap:6px;text-align:center;}
+
+  /* Hero */
+  #hero{min-height:100svh;}
+  .hero-layout{padding:0 16px;grid-template-columns:1fr;}
+  .hero-left{padding:56px 0 28px;}
+  h1.hero-name{font-size:clamp(56px,16vw,80px);}
+  .hero-bio{font-size:.85rem;max-width:100%;}
+  .hero-actions{flex-direction:column;gap:.6rem;}
+  .btn{width:100%;justify-content:center;padding:.75rem 1rem;}
+
+  /* Hero stats — 2x2 grid on mobile */
+  .hero-right{
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 0 32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    height:auto;
+  }
+  .stat-row{
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    border-top:none;
+    margin:0;
+    padding:18px 16px;
+  }
+  .stat-row:nth-child(2n){border-right:none;}
+  .stat-row:nth-child(3),.stat-row:nth-child(4){border-bottom:none;}
+  .stat-val{font-size:2rem;}
+  .stat-lbl{font-size:.62rem;}
+
+  /* Scroll hint */
+  .scroll-hint{display:none;}
+
+  /* Sections */
+  section{padding:60px 0;}
+  h2.sec-title{font-size:clamp(32px,9vw,48px);margin-bottom:32px;}
+  .section-label{margin-bottom:28px;}
+
+  /* Skills */
+  .skills-table{grid-template-columns:1fr;}
+
+  /* Experience */
+  .exp-top{grid-template-columns:1fr;gap:8px;}
+  .exp-dates{text-align:left;}
+  .exp-points{grid-template-columns:1fr !important;padding:16px 16px 20px;}
+  .exp-awards{padding:12px 16px;}
+  .exp-section-title{padding:12px 16px;}
+  .exp-top{padding:20px 16px 16px;}
+
+  /* Projects */
+  .proj-grid{grid-template-columns:1fr;}
+  .proj-card.feat{grid-column:span 1;}
+
+  /* Education */
+  .edu-row{grid-template-columns:1fr;gap:4px;padding:20px 0;}
+  .edu-yr{text-align:left;}
+  .edu-score{font-size:1.8rem;}
+
+  /* Certs */
+  .cert-grid{grid-template-columns:1fr;}
+
+  /* Contact */
+  .contact-left h2{font-size:clamp(40px,11vw,60px);}
 }
 </style>
 </head>
@@ -221,13 +319,14 @@ footer em { color:var(--lime);font-style:normal; }
   <div class="nav-status"><div class="status-dot"></div>Open to roles</div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="hero-layout">
     <div class="hero-left">
-      <div class="hero-eyebrow">Software Engineer &nbsp;·&nbsp; Noida, India</div>
+      <div class="hero-eyebrow">Software Engineer &nbsp;·&nbsp; Kanpur, India</div>
       <h1 class="hero-name">Tarang<br><span>Kush</span>waha</h1>
-      <p class="hero-bio">3+ years building enterprise ERP systems, scalable REST APIs, and backend architecture. Specialist in Python, Django &amp; Odoo — award-winning developer at Webkul Software.</p>
+      <p class="hero-bio">3+ years building enterprise ERP systems, AI-powered integrations, and scalable backend architecture. Deep specialist in Python, Django &amp; Odoo — from Odoo.sh deployments and data migrations to OpenAI integrations and real-time speech transcription.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-fill">View My Work ↓</a>
         <a href="#contact" class="btn btn-ghost">Get In Touch</a>
@@ -257,23 +356,55 @@ footer em { color:var(--lime);font-style:normal; }
 
 <div class="divider full"></div>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <div class="section-label reveal"><span>01</span> Core Competencies</div>
     <h2 class="sec-title reveal">Technical Skills</h2>
     <div class="skills-table reveal">
-      <div class="skill-cell"><div class="skill-cell-head"><span>⚙️</span>Backend</div><div class="chip-wrap"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span><span class="chip">Odoo ORM</span><span class="chip">REST APIs</span><span class="chip">ERP Customization</span></div></div>
-      <div class="skill-cell"><div class="skill-cell-head"><span>🗄️</span>Database</div><div class="chip-wrap"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">Query Optimization</span><span class="chip">ORM Design</span></div></div>
-      <div class="skill-cell"><div class="skill-cell-head"><span>🎨</span>Frontend</div><div class="chip-wrap"><span class="chip">JavaScript</span><span class="chip">OWL JS</span><span class="chip">Backbone.js</span><span class="chip">QWeb</span><span class="chip">Chart.js</span><span class="chip">HTML</span></div></div>
-      <div class="skill-cell"><div class="skill-cell-head"><span>🔗</span>Integrations</div><div class="chip-wrap"><span class="chip">WhatsApp API</span><span class="chip">Postmark</span><span class="chip">3CX VoIP</span><span class="chip">Webhooks</span></div></div>
-      <div class="skill-cell"><div class="skill-cell-head"><span>🛠️</span>Tools</div><div class="chip-wrap"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">VS Code</span><span class="chip">PyCharm</span><span class="chip">PythonAnywhere</span></div></div>
-      <div class="skill-cell"><div class="skill-cell-head"><span>🚀</span>Odoo</div><div class="chip-wrap"><span class="chip">v17 / v18 / v19</span><span class="chip">Module Migration</span><span class="chip">Custom Modules</span><span class="chip">QWeb Reports</span></div></div>
+      <div class="skill-cell">
+        <div class="skill-cell-head"><span>⚙️</span>Backend</div>
+        <div class="chip-wrap">
+          <span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span><span class="chip">Odoo ORM</span><span class="chip">REST APIs</span><span class="chip">ERP Customization</span><span class="chip">Data Migration</span><span class="chip">Batch Processing</span>
+        </div>
+      </div>
+      <div class="skill-cell ai-cell">
+        <div class="skill-cell-head"><span>🤖</span>AI & Automation</div>
+        <div class="chip-wrap">
+          <span class="chip ai">AI Integration</span><span class="chip ai">Auto-Summarization</span><span class="chip ai">SpeechRecognition</span><span class="chip ai">Call Transcription</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-head"><span>🚀</span>Odoo Platform</div>
+        <div class="chip-wrap">
+          <span class="chip">Odoo.sh</span><span class="chip">v17 / v18 / v19</span><span class="chip">Module Migration</span><span class="chip">Custom Modules</span><span class="chip">Public Controllers</span><span class="chip">Odoo Core Services</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-head"><span>🏭</span>Odoo Modules</div>
+        <div class="chip-wrap">
+          <span class="chip">Manufacturing (MRP)</span><span class="chip">Survey</span><span class="chip">CRM</span><span class="chip">Inventory</span><span class="chip">Sales</span><span class="chip">Purchase</span><span class="chip">Documents</span><span class="chip">Email Marketing</span><span class="chip">Events</span><span class="chip">Contacts</span><span class="chip">Whatsapp</span><span class="chip">eLearning</span><span class="chip">Website</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-head"><span>🎨</span>Frontend & Reports</div>
+        <div class="chip-wrap">
+          <span class="chip">QWeb Reports</span><span class="chip">Backend Editor</span><span class="chip">Website Editor</span><span class="chip">OWL JS</span><span class="chip">Backbone.js</span><span class="chip">Chart.js</span><span class="chip">Custom Widgets</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-head"><span>🔗</span>Integrations & Data</div>
+        <div class="chip-wrap">
+          <span class="chip">Mailjet</span><span class="chip">WhatsApp API</span><span class="chip">Postmark</span><span class="chip">3CX VoIP</span><span class="chip">Bulk Data Sync</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">Git</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="divider full"></div>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
     <div class="section-label reveal"><span>02</span> Where I've Worked</div>
@@ -282,74 +413,139 @@ footer em { color:var(--lime);font-style:normal; }
       <div class="exp-top">
         <div>
           <div class="exp-role">Software Developer</div>
-          <div class="exp-co">Webkul Software Pvt. Ltd. &nbsp;·&nbsp; Noida, UP</div>
+          <div class="exp-co">Webkul Software Pvt. Ltd. &nbsp;·&nbsp; Kanpur, UP</div>
         </div>
-        <div class="exp-dates">Feb 2023 — Present<br><span style="color:var(--lime);font-size:.63rem;letter-spacing:.06em;">3.1+ YEARS</span></div>
+        <div class="exp-dates">Feb 2023 — Present<br><span style="color:var(--lime);font-size:.63rem;letter-spacing:.06em;">3+ YEARS</span></div>
       </div>
       <div class="exp-awards">
         <span class="award-tag">🏆 Best Performer of the Year</span>
         <span class="award-tag">🎖️ Perfect Customization Badge</span>
       </div>
-      <ul class="exp-points">
-        <li>Migrated &amp; optimized 150+ Odoo modules across versions v17, v18, and v19.</li>
-        <li>Built backend solutions with Python &amp; DRF for enterprise ERP workflows.</li>
-        <li>Integrated Postmark, 3CX VoIP &amp; WhatsApp APIs for automated CRM pipelines.</li>
-        <li>Developed interactive UI using OWL JS, Backbone.js, and Driver.js.</li>
-        <li>Built dynamic business analytics dashboards with Chart.js.</li>
-        <li>Mentored junior developers and led regular code reviews.</li>
-      </ul>
+
+      <!-- AI & Intelligence -->
+      <div class="exp-section">
+        <div class="exp-section-title ai-section">AI & Intelligent Feature Integration</div>
+        <ul class="exp-points">
+          <li class="ai-point">Integrated <span class="hl-ai">OpenAI GPT API</span> directly into Odoo to power smart features including AI-assisted CRM notes, automated lead summaries, intelligent reply suggestions, and context-aware content generation inside business workflows.</li>
+          <li class="ai-point">Connected <span class="hl-ai">AI language models</span> to Odoo's backend editor and form views, enabling users to generate, refine, and auto-fill content without leaving the ERP interface.</li>
+          <li class="ai-point">Implemented <span class="hl-ai">real-time call transcription</span> using Python's SpeechRecognition library — allowing VoIP calls to be automatically transcribed and saved to CRM records, removing manual note-taking entirely.</li>
+        </ul>
+      </div>
+
+      <!-- Bulk Data & Sync -->
+      <div class="exp-section">
+        <div class="exp-section-title">Large-Scale Data Handling & Sync</div>
+        <ul class="exp-points">
+          <li>Diagnosed and resolved a critical <span class="hl">Mailjet bulk sync failure</span> caused by payload size limits and API rate throttling on large contact datasets.</li>
+          <li>Architected a <span class="hl">batch processing pipeline</span> to chunk large contact lists into controlled segments, with retry logic, error logging, and sync-status tracking per batch.</li>
+          <li>Implemented <span class="hl">deduplication and validation layers</span> pre-sync to clean data before Mailjet ingestion, reducing bounce rates and failed deliveries significantly.</li>
+          <li>Built a <span class="hl">CRON-based scheduler</span> to handle background batch jobs for email contact syncing, queue management, and automated failure recovery.</li>
+        </ul>
+      </div>
+
+      <!-- ERP & Module Work -->
+      <div class="exp-section">
+        <div class="exp-section-title">Odoo ERP & Platform Development</div>
+        <ul class="exp-points">
+          <li>Migrated, refactored, and optimized <span class="hl">150+ Odoo modules</span> across versions v17, v18, and v19.</li>
+          <li>Deployed and managed projects on <span class="hl">Odoo.sh</span> — handling branch environments, staging, and production pipelines.</li>
+          <li>Performed large-scale <span class="hl">data migrations</span> across Odoo versions, ensuring data integrity and zero-loss transitions.</li>
+          <li>Leveraged <span class="hl">Odoo core services</span> (mail.thread, ir.rule, ir.actions, res.config.settings) to build deeply integrated custom features for newer versions.</li>
+        </ul>
+      </div>
+
+      <!-- Manufacturing & Modules -->
+      <div class="exp-section">
+        <div class="exp-section-title">Manufacturing, Survey & Module Customization</div>
+        <ul class="exp-points">
+          <li>Customized the <span class="hl">Manufacturing (MRP)</span> module to meet client-specific production workflows, BOM structures, and work center logic.</li>
+          <li>Integrated manufacturing operations with inventory, sales, and accounting for end-to-end ERP automation.</li>
+          <li>Implemented and extended the <span class="hl">Survey module</span> with custom scoring logic, conditional flows, and dynamic result reporting.</li>
+          <li>Built custom features across CRM, Inventory, Sales, Purchase, and Accounting modules tailored to client requirements.</li>
+        </ul>
+      </div>
+
+      <!-- Reports & Editors -->
+      <div class="exp-section">
+        <div class="exp-section-title">Reports, Backend & Website Editor</div>
+        <ul class="exp-points">
+          <li>Designed heavily customized <span class="hl">QWeb PDF & HTML reports</span> — multilingual, multi-layout, and fully branded to client specifications.</li>
+          <li>Extended the <span class="hl">Odoo backend editor</span> with custom building blocks, dynamic fields, and reusable internal content snippets.</li>
+          <li>Enhanced the <span class="hl">Odoo website frontend editor</span> with custom drag-and-drop snippets, widgets, and theme-level overrides.</li>
+          <li>Integrated <span class="hl">Postmark, 3CX VoIP & WhatsApp APIs</span> for automated communication, CRM lead creation, and event-triggered messaging.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div class="divider full"></div>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
     <div class="section-label reveal"><span>03</span> Selected Work</div>
     <h2 class="sec-title reveal">Projects</h2>
     <div class="proj-grid reveal">
-      <div class="proj-card feat">
+
+      <div class="proj-card feat ai-card">
         <div class="proj-num">01</div>
-        <div class="proj-ico">📚</div>
-        <div class="proj-name">Sahitya Bhawan — ERP Customization</div>
-        <div class="proj-desc">Advanced Odoo ERP with FY-based record grouping filters, commission models using quarterly slabs, automated WhatsApp &amp; email stock alerts, and an enhanced dynamic product configurator for alternate and optional products.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">QWeb</span><span class="stack-tag">JavaScript</span><span class="stack-tag">WhatsApp API</span></div>
+        <div class="proj-ico">🤖</div>
+        <div class="proj-name">AI-Powered Odoo Integration Suite</div>
+        <div class="proj-desc">Integrated OpenAI GPT into Odoo CRM and backend editor for intelligent lead summaries, smart reply suggestions, and context-aware content generation. Also implemented real-time VoIP call transcription using Python's SpeechRecognition library — saving transcripts directly to CRM records, eliminating manual note-taking.</div>
+        <div class="proj-stack">
+          <span class="stack-tag ai">OpenAI API</span><span class="stack-tag ai">SpeechRecognition</span><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">OWL JS</span><span class="stack-tag">3CX VoIP</span>
+        </div>
       </div>
+
       <div class="proj-card">
         <div class="proj-num">02</div>
-        <div class="proj-ico">📞</div>
-        <div class="proj-name">Caribbean Sign — 3CX VoIP</div>
-        <div class="proj-desc">Integrated 3CX VoIP with Odoo CRM to auto-create leads from incoming calls, mapping call metadata to CRM records for better sales follow-ups.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">REST API</span><span class="stack-tag">3CX VoIP</span></div>
+        <div class="proj-ico">📊</div>
+        <div class="proj-name">Mailjet Bulk Sync Engine</div>
+        <div class="proj-desc">Resolved a large-scale Mailjet contact sync failure by designing a batch processing pipeline with chunked payloads, retry logic, deduplication, validation layers, and CRON-based background scheduling for zero-loss contact delivery.</div>
+        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">Mailjet API</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">CRON</span></div>
       </div>
+
       <div class="proj-card">
         <div class="proj-num">03</div>
-        <div class="proj-ico">📧</div>
-        <div class="proj-name">Canna — Mass Mailing Platform</div>
-        <div class="proj-desc">Company email templates with opt-in workflows, CRON-based validation integrated with Drupal, and a dynamic snippet editor for reusable email components.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Drupal</span></div>
+        <div class="proj-ico">📚</div>
+        <div class="proj-name">Sahitya Bhawan — ERP Customization</div>
+        <div class="proj-desc">Full Odoo ERP with FY-based record grouping, commission models with quarterly slabs, automated WhatsApp &amp; email stock alerts, and an enhanced dynamic product configurator.</div>
+        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">QWeb</span><span class="stack-tag">WhatsApp API</span><span class="stack-tag">PostgreSQL</span></div>
       </div>
+
       <div class="proj-card">
         <div class="proj-num">04</div>
-        <div class="proj-ico">📝</div>
-        <div class="proj-name">Personal Blog Platform</div>
-        <div class="proj-desc">Full-stack blog with JWT auth, role-based access control, complete RESTful API, deployed on PythonAnywhere.</div>
-        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">PythonAnywhere</span></div>
+        <div class="proj-ico">📞</div>
+        <div class="proj-name">Caribbean Sign — VoIP CRM</div>
+        <div class="proj-desc">Integrated 3CX VoIP with Odoo CRM to auto-create leads from incoming calls and map call metadata to CRM records for better sales pipeline visibility.</div>
+        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">REST API</span><span class="stack-tag">3CX VoIP</span></div>
       </div>
+
       <div class="proj-card">
         <div class="proj-num">05</div>
-        <div class="proj-ico">🪙</div>
-        <div class="proj-name">Coin Counter — ML / CNN</div>
-        <div class="proj-desc">CNN model to classify and sum Indian currency coin values directly from images using computer vision.</div>
-        <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">CNN</span><span class="stack-tag">Machine Learning</span></div>
+        <div class="proj-ico">📧</div>
+        <div class="proj-name">Canna — Mass Mailing Platform</div>
+        <div class="proj-desc">Company email templates with opt-in workflows, CRON-based Mailjet validation integrated with Drupal, and a dynamic snippet editor for the Odoo website editor.</div>
+        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Mailjet</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Drupal</span></div>
       </div>
+
+      <div class="proj-card">
+        <div class="proj-num">06</div>
+        <div class="proj-ico">📝</div>
+        <div class="proj-name">Blog Platform + Coin Counter ML</div>
+        <div class="proj-desc">Full-stack Django blog with JWT auth and role-based access deployed on PythonAnywhere. Plus a CNN model to classify and sum Indian currency coin values from images.</div>
+        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">CNN</span><span class="stack-tag ai">Machine Learning</span></div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div class="divider full"></div>
 
+<!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="section-label reveal"><span>04</span> Academic Background</div>
@@ -376,6 +572,7 @@ footer em { color:var(--lime);font-style:normal; }
 
 <div class="divider full"></div>
 
+<!-- CERTS -->
 <section id="certs">
   <div class="wrap">
     <div class="section-label reveal"><span>05</span> Credentials</div>
@@ -393,11 +590,12 @@ footer em { color:var(--lime);font-style:normal; }
 
 <div class="divider full"></div>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-left reveal-l">
       <h2>Let's Build<br><span>Together.</span></h2>
-      <p>Open to full-time roles, freelance contracts, and interesting backend engineering challenges. Let's create something great.</p>
+      <p>Open to full-time roles, freelance contracts, and interesting backend or AI engineering challenges. Let's create something great.</p>
     </div>
     <div class="contact-right reveal">
       <a href="mailto:tarangkushwaha1234@gmail.com" class="c-link"><div class="c-link-left"><span class="c-ico">✉</span>tarangkushwaha1234@gmail.com</div><span class="c-arrow">→</span></a>
@@ -411,12 +609,11 @@ footer em { color:var(--lime);font-style:normal; }
 <div class="divider full"></div>
 <footer class="wrap">
   <span>© 2025 <em>Tarang Kushwaha</em></span>
-  <span>Software Engineer · Noida 🇮🇳</span>
+  <span>Software Engineer · Kanpur 🇮🇳</span>
   <span>Built with precision</span>
 </footer>
 
 <script>
-// Cursor
 const dot=document.getElementById('dot'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
@@ -425,14 +622,10 @@ document.querySelectorAll('a,button,.chip').forEach(el=>{
   el.addEventListener('mouseenter',()=>{ring.style.width='44px';ring.style.height='44px';ring.style.borderColor='rgba(200,241,53,.7)';});
   el.addEventListener('mouseleave',()=>{ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(200,241,53,.35)';});
 });
-
-// Scroll reveal
 const ro=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('show'),i*55);});
 },{threshold:.1});
 document.querySelectorAll('.reveal,.reveal-l').forEach(el=>ro.observe(el));
-
-// Count up
 function countUp(el,to,dur=1300){
   let v=0,step=to/dur*16;
   const t=setInterval(()=>{v=Math.min(v+step,to);el.textContent=Math.floor(v);if(v>=to)clearInterval(t);},16);
@@ -442,8 +635,6 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.4});
 const hr=document.querySelector('.hero-right');
 if(hr)co.observe(hr);
-
-// Active nav highlight
 const secs=document.querySelectorAll('section[id]');
 const navAs=document.querySelectorAll('.nav-pill a');
 window.addEventListener('scroll',()=>{
