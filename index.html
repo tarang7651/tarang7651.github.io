@@ -1,4 +1,4 @@
-t<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -168,6 +168,21 @@ h2.sec-title { font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px
 .proj-stack { display:flex;flex-wrap:wrap;gap:4px; }
 .stack-tag { font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.04em;color:var(--muted);background:var(--black);border:1px solid var(--border);padding:2px 7px;border-radius:3px; }
 .stack-tag.ai { color:#c4b5fd;background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2); }
+.proj-links { display:flex;gap:8px;flex-wrap:wrap;margin-top:12px; }
+.proj-link {
+  font-family:'DM Mono',monospace;
+  font-size:.64rem;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--lime);
+  text-decoration:none;
+  border:1px solid rgba(200,241,53,.28);
+  background:rgba(200,241,53,.06);
+  padding:4px 8px;
+  border-radius:4px;
+  transition:all .25s;
+}
+.proj-link:hover { background:rgba(200,241,53,.12);border-color:rgba(200,241,53,.5);transform:translateY(-1px); }
 .proj-card.feat { grid-column:span 2;background:var(--raised); }
 .proj-card.feat .proj-name { font-size:1.05rem; }
 
@@ -316,7 +331,7 @@ footer em { color:var(--lime);font-style:normal; }
     <a href="#education">Edu</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="nav-status"><div class="status-dot"></div>Open to roles</div>
+  <div class="nav-status"><div class="status-dot"></div>Open to remote roles</div>
 </nav>
 
 <!-- HERO -->
@@ -342,7 +357,7 @@ footer em { color:var(--lime);font-style:normal; }
         <div class="stat-lbl">Modules Migrated</div>
       </div>
       <div class="stat-row">
-        <div class="stat-val"><span class="count" data-to="5">0</span><em>+</em></div>
+        <div class="stat-val"><span class="count" data-to="8">0</span><em>+</em></div>
         <div class="stat-lbl">Projects Shipped</div>
       </div>
       <div class="stat-row">
@@ -499,8 +514,34 @@ footer em { color:var(--lime);font-style:normal; }
         </div>
       </div>
 
-      <div class="proj-card">
+      <div class="proj-card ai-card">
         <div class="proj-num">02</div>
+        <div class="proj-ico">🔥</div>
+        <div class="proj-name">OpenRouter Mail AI Studio</div>
+        <div class="proj-desc">AI-powered email generation and marketing enhancement platform built for Odoo. Integrated 300+ AI models via OpenRouter into Email Marketing workflows, added AI-assisted template generation in Mail Composer, and enabled dynamic marketing image generation using Unsplash API.</div>
+        <div class="proj-stack">
+          <span class="stack-tag ai">OpenRouter API</span><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">OWL JS</span><span class="stack-tag">QWeb</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Unsplash API</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/tarang7651/openrouter_mail_ai" target="_blank" rel="noopener noreferrer">Repository</a>
+          <a class="proj-link" href="https://github.com/user-attachments/assets/8c602dcc-a40c-4891-8fde-98555569711d" target="_blank" rel="noopener noreferrer">Walkthrough</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">03</div>
+        <div class="proj-ico">🏢</div>
+        <div class="proj-name">Visitor Management System (VMS)</div>
+        <div class="proj-desc">Backend-powered Visitor Management System with secure auth, role-based access, RESTful architecture, and PostgreSQL persistence. Built with Django + DRF and deployed on Render for production-ready API delivery.</div>
+        <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">REST APIs</span><span class="stack-tag">Render</span></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://vms-backend-lc9h.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a class="proj-link" href="https://github.com/user-attachments/assets/5f35b4ff-ae35-4d07-b761-2e8b767fcce5" target="_blank" rel="noopener noreferrer">Walkthrough</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">04</div>
         <div class="proj-ico">📊</div>
         <div class="proj-name">Mailjet Bulk Sync Engine</div>
         <div class="proj-desc">Resolved a large-scale Mailjet contact sync failure by designing a batch processing pipeline with chunked payloads, retry logic, deduplication, validation layers, and CRON-based background scheduling for zero-loss contact delivery.</div>
@@ -508,7 +549,7 @@ footer em { color:var(--lime);font-style:normal; }
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">03</div>
+        <div class="proj-num">05</div>
         <div class="proj-ico">📚</div>
         <div class="proj-name">Sahitya Bhawan — ERP Customization</div>
         <div class="proj-desc">Full Odoo ERP with FY-based record grouping, commission models with quarterly slabs, automated WhatsApp &amp; email stock alerts, and an enhanced dynamic product configurator.</div>
@@ -516,7 +557,7 @@ footer em { color:var(--lime);font-style:normal; }
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">04</div>
+        <div class="proj-num">06</div>
         <div class="proj-ico">📞</div>
         <div class="proj-name">Caribbean Sign — VoIP CRM</div>
         <div class="proj-desc">Integrated 3CX VoIP with Odoo CRM to auto-create leads from incoming calls and map call metadata to CRM records for better sales pipeline visibility.</div>
@@ -524,7 +565,7 @@ footer em { color:var(--lime);font-style:normal; }
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">05</div>
+        <div class="proj-num">07</div>
         <div class="proj-ico">📧</div>
         <div class="proj-name">Canna — Mass Mailing Platform</div>
         <div class="proj-desc">Company email templates with opt-in workflows, CRON-based Mailjet validation integrated with Drupal, and a dynamic snippet editor for the Odoo website editor.</div>
@@ -532,7 +573,7 @@ footer em { color:var(--lime);font-style:normal; }
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">06</div>
+        <div class="proj-num">08</div>
         <div class="proj-ico">📝</div>
         <div class="proj-name">Blog Platform + Coin Counter ML</div>
         <div class="proj-desc">Full-stack Django blog with JWT auth and role-based access deployed on PythonAnywhere. Plus a CNN model to classify and sum Indian currency coin values from images.</div>
@@ -600,6 +641,7 @@ footer em { color:var(--lime);font-style:normal; }
     <div class="contact-right reveal">
       <a href="mailto:tarangkushwaha1234@gmail.com" class="c-link"><div class="c-link-left"><span class="c-ico">✉</span>tarangkushwaha1234@gmail.com</div><span class="c-arrow">→</span></a>
       <a href="tel:+917651903315" class="c-link"><div class="c-link-left"><span class="c-ico">📱</span>+91 76519 03315</div><span class="c-arrow">→</span></a>
+      <a href="https://github.com/tarang7651" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-link-left"><span class="c-ico">🐙</span>GitHub Profile</div><span class="c-arrow">→</span></a>
       <a href="https://linkedin.com" target="_blank" class="c-link"><div class="c-link-left"><span class="c-ico">💼</span>LinkedIn Profile</div><span class="c-arrow">→</span></a>
       <a href="https://hackerrank.com" target="_blank" class="c-link"><div class="c-link-left"><span class="c-ico">💻</span>HackerRank Profile</div><span class="c-arrow">→</span></a>
     </div>
