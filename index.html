@@ -1,689 +1,1718 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarang Kushwaha · Software Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --black:   #070708;
-  --ink:     #0d0d0f;
-  --surface: #111115;
-  --raised:  #18181d;
-  --border:  #222228;
-  --border2: #2e2e38;
-  --muted:   #55555f;
-  --dim:     #888895;
-  --text:    #d8d8e0;
-  --white:   #f0f0f5;
-  --lime:    #c8f135;
-  --lime2:   #a8d420;
-  --gold:    #f5c842;
-  --violet:  #a78bfa;
-  --r: 8px;
-}
-html { scroll-behavior: smooth; }
-body {
-  background: var(--black);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
-  cursor: none;
-}
-#dot { width:8px;height:8px;background:var(--lime);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%); }
-#ring { width:32px;height:32px;border:1.5px solid rgba(200,241,53,.35);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarang Kushwaha is an Odoo ERP and Python backend developer specializing in Odoo module development, migrations, Django APIs, AI integrations, and production deployments.">
+  <meta name="theme-color" content="#11161a">
+  <title>Tarang Kushwaha | Odoo ERP & Python Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    :root {
+      --bg: #101418;
+      --bg-2: #151b20;
+      --ink: #07090b;
+      --panel: #1c242a;
+      --panel-2: #202b32;
+      --paper: #f5efe5;
+      --paper-2: #ebe0d1;
+      --text: #f7f1e8;
+      --muted: #b8afa3;
+      --muted-2: #877d70;
+      --line: #34424a;
+      --line-soft: rgba(245, 239, 229, 0.14);
+      --teal: #53c2b3;
+      --teal-dark: #286f68;
+      --copper: #ca8750;
+      --amber: #efbd67;
+      --green: #91d27f;
+      --danger: #e17865;
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.32);
+      --r: 8px;
+      --container: 1180px;
+    }
 
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px;
-  background: rgba(7,7,8,.92);
-  backdrop-filter: blur(24px) saturate(1.5);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo { font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--white);text-decoration:none; }
-.nav-logo em { color:var(--lime);font-style:normal; }
-.nav-pill { display:flex;gap:2px;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:4px; }
-.nav-pill a { color:var(--muted);text-decoration:none;font-size:.72rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .9rem;border-radius:100px;transition:all .2s; }
-.nav-pill a:hover { color:var(--white);background:var(--raised); }
-.nav-status { display:flex;align-items:center;gap:.5rem;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--dim); }
-.status-dot { width:7px;height:7px;background:var(--lime);border-radius:50%;animation:blink 2s ease infinite; }
-@keyframes blink { 0%,100%{opacity:1}50%{opacity:.3} }
+    html {
+      scroll-behavior: auto;
+    }
 
-#hero { min-height:100vh;padding-top:60px;display:flex;align-items:stretch;position:relative;overflow:hidden; }
-.hero-layout { max-width:1100px;margin:0 auto;padding:0 40px;width:100%;display:grid;grid-template-columns:1fr 300px;align-items:center; }
-.hero-glow { position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(200,241,53,.055) 0%,transparent 65%);top:50%;left:50%;transform:translate(-20%,-50%);pointer-events:none; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        linear-gradient(rgba(245, 239, 229, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 239, 229, 0.025) 1px, transparent 1px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-.hero-left { padding:80px 0; }
-.hero-eyebrow { display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--lime);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.8rem;opacity:0;animation:up .7s .1s ease forwards; }
-.hero-eyebrow::before { content:'';width:28px;height:1px;background:var(--lime); }
-h1.hero-name { font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,118px);line-height:.92;letter-spacing:.01em;color:var(--white);margin-bottom:1.5rem;opacity:0;animation:up .7s .2s ease forwards; }
-h1.hero-name span { color:var(--lime); }
-.hero-bio { max-width:480px;font-size:.93rem;line-height:1.8;color:var(--dim);margin-bottom:2.5rem;opacity:0;animation:up .7s .3s ease forwards; }
-.hero-actions { display:flex;gap:.75rem;flex-wrap:wrap;opacity:0;animation:up .7s .4s ease forwards; }
-.btn { display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:var(--r);font-size:.78rem;font-weight:500;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:all .25s;cursor:none; }
-.btn-fill { background:var(--lime);color:#0a0a0b; }
-.btn-fill:hover { background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,241,53,.25); }
-.btn-ghost { background:transparent;color:var(--text);border:1px solid var(--border2); }
-.btn-ghost:hover { border-color:var(--lime);color:var(--lime);transform:translateY(-2px); }
+    body.no-scroll {
+      overflow: hidden;
+    }
 
-.hero-right { border-left:1px solid var(--border);padding:80px 0 80px 48px;display:flex;flex-direction:column;opacity:0;animation:fadein .8s .5s ease forwards;height:100%;justify-content:center; }
-.stat-row { padding:26px 0;border-bottom:1px solid var(--border); }
-.stat-row:last-child { border-bottom:none; }
-.stat-val { font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--white);line-height:1;letter-spacing:.02em; }
-.stat-val em { color:var(--lime);font-style:normal; }
-.stat-lbl { font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-@keyframes up { from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)} }
-@keyframes fadein { from{opacity:0}to{opacity:1} }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.scroll-hint { position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadein 1s 1s ease both; }
-.scroll-hint::after { content:'';width:1px;height:44px;background:linear-gradient(var(--lime),transparent);animation:grow 1.8s ease-in-out infinite; }
-@keyframes grow { 0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom} }
+    button {
+      font: inherit;
+    }
 
-.divider { height:1px;background:var(--border);max-width:1100px;margin:0 auto; }
-.divider.full { max-width:none; }
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      transform: translateY(-180%);
+      padding: 10px 14px;
+      border-radius: var(--r);
+      background: var(--paper);
+      color: var(--ink);
+      transition: transform 180ms ease;
+    }
 
-section { padding:96px 0; }
-.section-label { display:flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:44px; }
-.section-label::before { content:'';width:20px;height:1px;background:var(--lime); }
-.section-label span { color:var(--lime); }
-h2.sec-title { font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px);letter-spacing:.02em;color:var(--white);line-height:1;margin-bottom:52px; }
+    .skip-link:focus {
+      transform: translateY(0);
+    }
 
-/* SKILLS */
-#skills { background:var(--ink); }
-.skills-table { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden; }
-.skill-cell { background:var(--surface);padding:26px 26px 22px;transition:background .2s; }
-.skill-cell:hover { background:var(--raised); }
-.skill-cell-head { display:flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--border); }
-/* AI cell gets a violet tint to stand out */
-.skill-cell.ai-cell { background: rgba(167,139,250,.03); }
-.skill-cell.ai-cell:hover { background: rgba(167,139,250,.07); }
-.skill-cell.ai-cell .skill-cell-head { color: var(--violet); border-bottom-color: rgba(167,139,250,.2); }
-.chip-wrap { display:flex;flex-wrap:wrap;gap:5px; }
-.chip { background:var(--raised);border:1px solid var(--border2);color:var(--dim);font-size:.71rem;padding:3px 9px;border-radius:4px;letter-spacing:.03em;transition:all .2s; }
-.chip:hover { background:rgba(200,241,53,.08);border-color:rgba(200,241,53,.3);color:var(--lime); }
-.chip.ai { background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2);color:#c4b5fd; }
-.chip.ai:hover { background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.5);color:var(--violet); }
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
 
-/* EXPERIENCE */
-#experience { background:var(--black); }
-.exp-card { background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .3s; }
-.exp-card:hover { border-color:var(--border2); }
-.exp-top { display:grid;grid-template-columns:1fr auto;align-items:start;padding:34px 34px 26px;border-bottom:1px solid var(--border);gap:20px; }
-.exp-role { font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:6px; }
-.exp-co { font-size:.78rem;color:var(--dim);display:flex;align-items:center;gap:8px; }
-.exp-co::before { content:'';width:4px;height:4px;background:var(--lime);border-radius:50%; }
-.exp-dates { text-align:right;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em; }
-.exp-awards { display:flex;gap:8px;flex-wrap:wrap;padding:14px 34px;border-bottom:1px solid var(--border);background:rgba(245,200,66,.025); }
-.award-tag { display:inline-flex;align-items:center;gap:5px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.2);color:var(--gold);font-size:.68rem;padding:3px 10px;border-radius:100px;letter-spacing:.04em; }
-.exp-section { border-bottom: 1px solid var(--border); }
-.exp-section:last-child { border-bottom: none; }
-.exp-section-title {
-  padding: 14px 34px 12px;
-  font-family: 'DM Mono', monospace;
-  font-size: .64rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--lime);
-  background: rgba(200,241,53,.03);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.exp-section-title::before { content:''; width:14px; height:1px; background:var(--lime); }
-.exp-section-title.ai-section { color: var(--violet); background: rgba(167,139,250,.04); }
-.exp-section-title.ai-section::before { background: var(--violet); }
-.exp-points { padding:20px 34px 24px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;list-style:none; }
-.exp-points li { font-size:.81rem;line-height:1.72;color:var(--dim);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:11px; }
-.exp-points li:last-child { border-bottom:none; }
-.exp-points li::before { content:'→';color:var(--lime);flex-shrink:0;font-size:.78rem;margin-top:2px; }
-.exp-points li.ai-point::before { content:'◆';color:var(--violet); }
-.hl { color: var(--text); font-weight: 500; }
-.hl-ai { color: #c4b5fd; font-weight: 500; }
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(16, 20, 24, 0.82);
+      backdrop-filter: blur(18px);
+    }
 
-/* PROJECTS */
-#projects { background:var(--ink); }
-.proj-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden; }
-.proj-card { background:var(--surface);padding:30px 26px;position:relative;overflow:hidden;transition:background .3s;display:flex;flex-direction:column; }
-.proj-card:hover { background:var(--raised); }
-.proj-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .4s ease; }
-.proj-card:hover::before { transform:scaleX(1); }
-.proj-card.ai-card::before { background: linear-gradient(90deg, var(--violet), var(--lime)); }
-.proj-num { font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:1;color:var(--border2);position:absolute;bottom:14px;right:18px;user-select:none;transition:color .3s; }
-.proj-card:hover .proj-num { color:rgba(200,241,53,.07); }
-.proj-ico { width:38px;height:38px;background:var(--raised);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:18px;transition:border-color .3s; }
-.proj-card:hover .proj-ico { border-color:rgba(200,241,53,.3); }
-.proj-card.ai-card:hover .proj-ico { border-color:rgba(167,139,250,.4); }
-.proj-name { font-family:'DM Sans',sans-serif;font-weight:500;font-size:.91rem;color:var(--white);line-height:1.35;margin-bottom:9px; }
-.proj-desc { font-size:.76rem;line-height:1.72;color:var(--muted);margin-bottom:18px;flex:1; }
-.proj-stack { display:flex;flex-wrap:wrap;gap:4px; }
-.stack-tag { font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.04em;color:var(--muted);background:var(--black);border:1px solid var(--border);padding:2px 7px;border-radius:3px; }
-.stack-tag.ai { color:#c4b5fd;background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2); }
-.proj-links { display:flex;gap:8px;flex-wrap:wrap;margin-top:12px; }
-.proj-link {
-  font-family:'DM Mono',monospace;
-  font-size:.64rem;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  color:var(--lime);
-  text-decoration:none;
-  border:1px solid rgba(200,241,53,.28);
-  background:rgba(200,241,53,.06);
-  padding:4px 8px;
-  border-radius:4px;
-  transition:all .25s;
-}
-.proj-link:hover { background:rgba(200,241,53,.12);border-color:rgba(200,241,53,.5);transform:translateY(-1px); }
-.proj-card.feat { grid-column:span 2;background:var(--raised); }
-.proj-card.feat .proj-name { font-size:1.05rem; }
+    .nav-inner {
+      width: min(1240px, calc(100% - 40px));
+      height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-/* EDUCATION */
-#education { background:var(--black); }
-.edu-row { display:grid;grid-template-columns:170px 1fr auto;align-items:center;padding:26px 0;border-bottom:1px solid var(--border);gap:28px;transition:all .2s; }
-.edu-row:first-child { padding-top:0; }
-.edu-row:last-child { border-bottom:none; }
-.edu-row:hover .edu-score { color:var(--lime); }
-.edu-score { font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.04em;color:var(--border2);line-height:1;transition:color .3s; }
-.edu-deg { font-weight:500;font-size:.87rem;color:var(--white);margin-bottom:3px; }
-.edu-school { font-size:.75rem;color:var(--muted); }
-.edu-yr { font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;text-align:right;white-space:nowrap; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+    }
 
-/* CERTS */
-#certs { background:var(--ink); }
-.cert-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
-.cert-card { background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;align-items:center;gap:13px;transition:all .25s; }
-.cert-card:hover { border-color:var(--border2);transform:translateX(4px); }
-.cert-ico { width:34px;height:34px;flex-shrink:0;background:var(--raised);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem; }
-.cert-name { font-size:.76rem;color:var(--text);line-height:1.4; }
-.cert-by { font-size:.66rem;color:var(--muted);margin-top:2px; }
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(83, 194, 179, 0.48);
+      border-radius: var(--r);
+      background: rgba(83, 194, 179, 0.12);
+      color: var(--teal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+    }
 
-/* CONTACT */
-#contact { background:var(--black);padding:110px 0; }
-.contact-inner { max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center; }
-.contact-left h2 { font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,78px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:18px; }
-.contact-left h2 span { color:var(--lime); }
-.contact-left p { font-size:.86rem;line-height:1.8;color:var(--dim);max-width:360px; }
-.contact-right { display:flex;flex-direction:column;gap:9px; }
-.c-link { display:flex;align-items:center;justify-content:space-between;padding:17px 20px;background:var(--surface);border:1px solid var(--border);border-radius:9px;color:var(--text);text-decoration:none;font-size:.8rem;font-weight:400;transition:all .25s; }
-.c-link:hover { border-color:var(--lime);color:var(--lime);transform:translateX(4px); }
-.c-link-left { display:flex;align-items:center;gap:11px; }
-.c-ico { font-size:.95rem;width:18px;text-align:center; }
-.c-arrow { color:var(--border2);font-size:.85rem;transition:color .25s,transform .25s; }
-.c-link:hover .c-arrow { color:var(--lime);transform:translateX(4px); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      background: rgba(28, 36, 42, 0.82);
+    }
 
-footer { border-top:1px solid var(--border);padding:22px 40px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.06em; }
-footer em { color:var(--lime);font-style:normal; }
+    .nav-links a {
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 180ms ease, background 180ms ease;
+    }
 
-.reveal { opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease; }
-.reveal.show { opacity:1;transform:translateY(0); }
-.reveal-l { opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease; }
-.reveal-l.show { opacity:1;transform:translateX(0); }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(83, 194, 179, 0.12);
+      color: var(--text);
+    }
 
-@media(max-width:900px){
-  .hero-layout{grid-template-columns:1fr;}
-  .hero-right{border-left:none;border-top:1px solid var(--border);padding:32px 0 0;flex-direction:row;flex-wrap:wrap;height:auto;gap:0;}
-  .stat-row{border-bottom:none;padding:16px 24px 16px 0;border-right:1px solid var(--border);margin-right:24px;}
-  .stat-row:last-child{border-right:none;margin-right:0;}
-  .stat-val{font-size:2.2rem;}
-  .skills-table,.proj-grid,.cert-grid{grid-template-columns:1fr 1fr;}
-  .proj-card.feat{grid-column:span 2;}
-  .contact-inner{grid-template-columns:1fr;gap:44px;}
-  .exp-points{grid-template-columns:1fr;}
-}
-@media(max-width:600px){
-  /* Nav */
-  nav{padding:0 16px;}
-  nav .nav-pill{display:none;}
-  nav .nav-status{display:none;}
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border: 1px solid rgba(202, 135, 80, 0.55);
+      border-radius: var(--r);
+      color: var(--paper);
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: rgba(202, 135, 80, 0.14);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
 
-  /* Global spacing */
-  .wrap{padding-left:16px;padding-right:16px;}
-  .contact-inner{padding-left:16px;padding-right:16px;grid-template-columns:1fr;gap:40px;}
-  footer{padding:18px 16px;flex-direction:column;gap:6px;text-align:center;}
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      border-color: var(--copper);
+      background: rgba(202, 135, 80, 0.22);
+    }
 
-  /* Hero */
-  #hero{min-height:100svh;}
-  .hero-layout{padding:0 16px;grid-template-columns:1fr;}
-  .hero-left{padding:56px 0 28px;}
-  h1.hero-name{font-size:clamp(56px,16vw,80px);}
-  .hero-bio{font-size:.85rem;max-width:100%;}
-  .hero-actions{flex-direction:column;gap:.6rem;}
-  .btn{width:100%;justify-content:center;padding:.75rem 1rem;}
+    .nav-cta svg,
+    .btn svg,
+    .icon-box svg,
+    .link-row svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
 
-  /* Hero stats — 2x2 grid on mobile */
-  .hero-right{
-    border-left:none;
-    border-top:1px solid var(--border);
-    padding:24px 0 32px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-    height:auto;
-  }
-  .stat-row{
-    border-right:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    border-top:none;
-    margin:0;
-    padding:18px 16px;
-  }
-  .stat-row:nth-child(2n){border-right:none;}
-  .stat-row:nth-child(3),.stat-row:nth-child(4){border-bottom:none;}
-  .stat-val{font-size:2rem;}
-  .stat-lbl{font-size:.62rem;}
+    .hero {
+      position: relative;
+      min-height: 82svh;
+      display: flex;
+      align-items: flex-end;
+      padding: 122px 0 76px;
+      overflow: hidden;
+      isolation: isolate;
+    }
 
-  /* Scroll hint */
-  .scroll-hint{display:none;}
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: var(--bg);
+    }
 
-  /* Sections */
-  section{padding:60px 0;}
-  h2.sec-title{font-size:clamp(32px,9vw,48px);margin-bottom:32px;}
-  .section-label{margin-bottom:28px;}
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      filter: saturate(0.92) contrast(1.05);
+    }
 
-  /* Skills */
-  .skills-table{grid-template-columns:1fr;}
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
 
-  /* Experience */
-  .exp-top{grid-template-columns:1fr;gap:8px;}
-  .exp-dates{text-align:left;}
-  .exp-points{grid-template-columns:1fr !important;padding:16px 16px 20px;}
-  .exp-awards{padding:12px 16px;}
-  .exp-section-title{padding:12px 16px;}
-  .exp-top{padding:20px 16px 16px;}
+    .hero::before {
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(7, 9, 11, 0.96) 0%, rgba(16, 20, 24, 0.88) 38%, rgba(16, 20, 24, 0.46) 72%, rgba(16, 20, 24, 0.64) 100%),
+        linear-gradient(0deg, rgba(16, 20, 24, 0.98) 0%, rgba(16, 20, 24, 0.18) 35%, rgba(16, 20, 24, 0.62) 100%);
+    }
 
-  /* Projects */
-  .proj-grid{grid-template-columns:1fr;}
-  .proj-card.feat{grid-column:span 1;}
+    .hero::after {
+      z-index: -1;
+      border-bottom: 1px solid var(--line-soft);
+      background:
+        linear-gradient(90deg, rgba(83, 194, 179, 0.16), transparent 46%),
+        linear-gradient(0deg, rgba(202, 135, 80, 0.18), transparent 38%);
+      mix-blend-mode: screen;
+      opacity: 0.72;
+    }
 
-  /* Education */
-  .edu-row{grid-template-columns:1fr;gap:4px;padding:20px 0;}
-  .edu-yr{text-align:left;}
-  .edu-score{font-size:1.8rem;}
+    .hero-content {
+      max-width: 760px;
+    }
 
-  /* Certs */
-  .cert-grid{grid-template-columns:1fr;}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      color: var(--teal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
 
-  /* Contact */
-  .contact-left h2{font-size:clamp(40px,11vw,60px);}
-}
-</style>
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: 6.4rem;
+      line-height: 0.96;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      color: var(--amber);
+    }
+
+    .hero-role {
+      max-width: 760px;
+      margin-top: 18px;
+      color: var(--amber);
+      font-size: 1.75rem;
+      line-height: 1.35;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      max-width: 690px;
+      margin-top: 16px;
+      color: var(--paper-2);
+      font-size: 1.16rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 17px;
+      border: 1px solid transparent;
+      border-radius: var(--r);
+      font-weight: 800;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: #fff8ef;
+    }
+
+    .btn-secondary {
+      border-color: rgba(83, 194, 179, 0.46);
+      background: rgba(83, 194, 179, 0.12);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal);
+      background: rgba(83, 194, 179, 0.19);
+    }
+
+    .btn-quiet {
+      border-color: var(--line-soft);
+      background: rgba(16, 20, 24, 0.62);
+      color: var(--paper-2);
+    }
+
+    .btn-quiet:hover {
+      border-color: rgba(202, 135, 80, 0.6);
+      color: var(--text);
+    }
+
+    .proof {
+      position: relative;
+      z-index: 3;
+      background: var(--paper);
+      color: var(--ink);
+      border-bottom: 1px solid rgba(7, 9, 11, 0.12);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-left: 1px solid rgba(7, 9, 11, 0.12);
+    }
+
+    .proof-item {
+      min-height: 128px;
+      padding: 24px 22px;
+      border-right: 1px solid rgba(7, 9, 11, 0.12);
+    }
+
+    .proof-value {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+      color: var(--ink);
+      font-size: 2.35rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .proof-value small {
+      color: var(--copper);
+      font-size: 1.3rem;
+    }
+
+    .proof-label {
+      margin-top: 9px;
+      color: #5f574f;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    main section[id] {
+      scroll-margin-top: 86px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: end;
+      gap: 56px;
+      margin-bottom: 46px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--teal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      color: var(--text);
+      font-size: 3rem;
+      line-height: 1.08;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .light-section {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .light-section .section-title,
+    .light-section h3 {
+      color: var(--ink);
+    }
+
+    .light-section .section-copy,
+    .light-section .section-kicker {
+      color: #655d54;
+    }
+
+    .light-section .section-kicker::before {
+      background: var(--copper);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pillar {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid rgba(7, 9, 11, 0.14);
+      border-radius: var(--r);
+      background: #fff8ef;
+      box-shadow: 0 18px 42px rgba(7, 9, 11, 0.08);
+    }
+
+    .icon-box {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: var(--r);
+      background: rgba(40, 111, 104, 0.12);
+      color: var(--teal-dark);
+    }
+
+    .pillar h3,
+    .project-card h3,
+    .timeline-title,
+    .edu-title,
+    .contact-title {
+      font-size: 1.14rem;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .pillar p {
+      color: #6c6258;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .mini-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border: 1px solid rgba(7, 9, 11, 0.13);
+      border-radius: 999px;
+      color: #4f4841;
+      background: rgba(235, 224, 209, 0.66);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .dark-tag {
+      border-color: var(--line-soft);
+      color: var(--paper-2);
+      background: rgba(245, 239, 229, 0.06);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 34px;
+      padding: 30px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r);
+      background: rgba(28, 36, 42, 0.72);
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+    }
+
+    .timeline-meta strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--amber);
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+    }
+
+    .timeline-title {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .timeline-company {
+      margin-bottom: 18px;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .timeline-list li::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(83, 194, 179, 0.12);
+    }
+
+    .awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .award {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid rgba(239, 189, 103, 0.34);
+      border-radius: 999px;
+      color: var(--amber);
+      background: rgba(239, 189, 103, 0.08);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .projects {
+      background: var(--bg-2);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r);
+      background: rgba(16, 20, 24, 0.7);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(83, 194, 179, 0.44);
+      background: rgba(28, 36, 42, 0.86);
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .project-kicker {
+      color: var(--copper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .project-card h3 {
+      margin-bottom: 13px;
+      color: var(--text);
+      font-size: 1.28rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .impact {
+      margin-top: 17px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--paper);
+      font-weight: 800;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 22px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 34px;
+      padding: 7px 10px;
+      border: 1px solid rgba(83, 194, 179, 0.42);
+      border-radius: var(--r);
+      color: var(--teal);
+      font-size: 0.86rem;
+      font-weight: 800;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .text-link:hover {
+      transform: translateY(-1px);
+      border-color: var(--teal);
+      background: rgba(83, 194, 179, 0.1);
+    }
+
+    .stack-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r);
+      background: var(--line-soft);
+    }
+
+    .stack-group {
+      padding: 24px;
+      background: rgba(28, 36, 42, 0.76);
+    }
+
+    .stack-group h3 {
+      margin-bottom: 14px;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .credential-panel {
+      padding: 30px;
+      border: 1px solid rgba(7, 9, 11, 0.14);
+      border-radius: var(--r);
+      background: #fff8ef;
+    }
+
+    .edu-item,
+    .cert-item {
+      display: grid;
+      gap: 4px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(7, 9, 11, 0.11);
+    }
+
+    .edu-item:first-of-type,
+    .cert-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .edu-item:last-child,
+    .cert-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .edu-title,
+    .cert-title {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .edu-meta,
+    .cert-meta {
+      color: #6c6258;
+      font-size: 0.94rem;
+    }
+
+    .contact {
+      padding: 104px 0;
+      background:
+        linear-gradient(90deg, rgba(83, 194, 179, 0.16), transparent 54%),
+        linear-gradient(0deg, rgba(202, 135, 80, 0.16), transparent 48%),
+        var(--ink);
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .contact-title {
+      max-width: 660px;
+      color: var(--text);
+      font-size: 3.4rem;
+      line-height: 1.05;
+    }
+
+    .contact-copy {
+      max-width: 560px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 58px;
+      padding: 14px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r);
+      background: rgba(245, 239, 229, 0.055);
+      color: var(--paper-2);
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .link-row:hover {
+      transform: translateX(3px);
+      border-color: rgba(83, 194, 179, 0.5);
+      background: rgba(83, 194, 179, 0.1);
+    }
+
+    .link-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .link-left span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line-soft);
+      background: var(--ink);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner strong {
+      color: var(--paper);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero h1 {
+        font-size: 5rem;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .pillars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-grid,
+      .stack-matrix {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-card.featured {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-inner {
+        width: min(100% - 28px, 1240px);
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 76svh;
+        padding: 104px 0 48px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .hero-role {
+        font-size: 1.42rem;
+      }
+
+      .hero-lead {
+        font-size: 1.05rem;
+      }
+
+      .section-head,
+      .timeline-item,
+      .credentials,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        gap: 20px;
+      }
+
+      .timeline-item {
+        gap: 18px;
+      }
+
+      .contact-grid {
+        gap: 38px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 32px, var(--container));
+      }
+
+      .nav-inner {
+        height: 66px;
+      }
+
+      .nav-cta {
+        padding: 9px 10px;
+        font-size: 0.84rem;
+      }
+
+      .hero {
+        min-height: 76svh;
+        padding: 92px 0 40px;
+      }
+
+      .hero-bg img {
+        object-position: 67% center;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(7, 9, 11, 0.96) 0%, rgba(16, 20, 24, 0.9) 58%, rgba(16, 20, 24, 0.65) 100%),
+          linear-gradient(0deg, rgba(16, 20, 24, 0.98) 0%, rgba(16, 20, 24, 0.3) 50%, rgba(16, 20, 24, 0.72) 100%);
+      }
+
+      .eyebrow {
+        align-items: flex-start;
+        font-size: 0.78rem;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-role {
+        font-size: 1.16rem;
+      }
+
+      .hero-lead {
+        margin-top: 18px;
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        padding-inline: 12px;
+      }
+
+      .proof-grid,
+      .pillars,
+      .project-grid,
+      .stack-matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid {
+        border-left: 0;
+      }
+
+      .proof-item {
+        min-height: 104px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(7, 9, 11, 0.12);
+      }
+
+      .proof-item:last-child {
+        border-bottom: 0;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .timeline-item,
+      .project-card,
+      .stack-group,
+      .credential-panel {
+        padding: 20px;
+      }
+
+      .contact {
+        padding: 76px 0;
+      }
+
+      .contact-title {
+        font-size: 2.45rem;
+      }
+
+      .footer-inner {
+        min-height: 92px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div id="dot"></div>
-<div id="ring"></div>
-
-<nav>
-  <a href="#hero" class="nav-logo">TK<em>.</em></a>
-  <div class="nav-pill">
-    <a href="#skills">Skills</a>
-    <a href="#experience">Exp</a>
-    <a href="#projects">Work</a>
-    <a href="#education">Edu</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="nav-status"><div class="status-dot"></div>Open to remote roles</div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-layout">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Software Engineer &nbsp;·&nbsp;, India</div>
-      <h1 class="hero-name">Tarang<br><span>Kush</span>waha</h1>
-      <p class="hero-bio">3+ years building enterprise ERP systems, AI-powered integrations, and scalable backend architecture. Deep specialist in Python, Django &amp; Odoo — from Odoo.sh deployments and data migrations to OpenAI integrations and real-time speech transcription.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-fill">View My Work ↓</a>
-        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="Tarang Kushwaha home">
+        <span class="brand-mark">TK</span>
+        <span>Tarang Kushwaha</span>
+      </a>
+      <div class="nav-links" aria-label="Page sections">
+        <a href="#specialty">Specialty</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
+      <a class="nav-cta" href="assets/tarang-kushwaha-odoo-resume.pdf" download>
+        <i data-lucide="download" aria-hidden="true"></i>
+        Resume
+      </a>
     </div>
-    <div class="hero-right">
-      <div class="stat-row">
-        <div class="stat-val"><span class="count" data-to="3">0</span><em>+</em></div>
-        <div class="stat-lbl">Years Experience</div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/erp-engineering-hero.png" alt="">
       </div>
-      <div class="stat-row">
-        <div class="stat-val"><span class="count" data-to="150">0</span><em>+</em></div>
-        <div class="stat-lbl">Modules Migrated</div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Python backend engineer | Odoo ERP developer | AI workflow builder</div>
+          <h1>Tarang <span>Kushwaha</span></h1>
+          <p class="hero-role">Odoo ERP and Python backend developer for operational systems that need to stay reliable.</p>
+          <p class="hero-lead">3+ years shipping Odoo Community and Enterprise work across v14-v19, Django/DRF APIs, PostgreSQL optimization, AI integrations, and production deployments for real business workflows.</p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#projects">
+              <i data-lucide="briefcase-business" aria-hidden="true"></i>
+              View Case Studies
+            </a>
+            <a class="btn btn-secondary" href="mailto:tarangkushwaha1234@gmail.com">
+              <i data-lucide="mail" aria-hidden="true"></i>
+              Start a Conversation
+            </a>
+            <a class="btn btn-quiet" href="assets/tarang-kushwaha-python-resume.pdf" download>
+              <i data-lucide="file-text" aria-hidden="true"></i>
+              Python Resume
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="stat-row">
-        <div class="stat-val"><span class="count" data-to="8">0</span><em>+</em></div>
-        <div class="stat-lbl">Projects Shipped</div>
+    </section>
+
+    <section class="proof" aria-label="Portfolio highlights">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof-item reveal">
+            <div class="proof-value"><span data-count="3">3</span><small>+</small></div>
+            <div class="proof-label">Years in Odoo and Python delivery</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-value"><span data-count="20">20</span><small>+</small></div>
+            <div class="proof-label">Production Odoo modules shipped</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-value"><span data-count="150">150</span><small>+</small></div>
+            <div class="proof-label">Module migrations across v14-v19</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-value"><span data-count="10000">10,000</span><small>+</small></div>
+            <div class="proof-label">Contacts synchronized and segmented</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-value"><span data-count="40">40</span><small>%</small></div>
+            <div class="proof-label">Manual effort reduced with AI workflows</div>
+          </div>
+        </div>
       </div>
-      <div class="stat-row">
-        <div class="stat-val"><span class="count" data-to="2">0</span><em>×</em></div>
-        <div class="stat-lbl">Awards Won</div>
+    </section>
+
+    <section class="light-section" id="specialty">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="section-kicker">Specialty</div>
+            <h2 class="section-title">Deep Odoo work with a backend engineer's discipline.</h2>
+          </div>
+          <p class="section-copy reveal">The strongest overlap in my work is ERP customization, Python services, automation, and deployment ownership. I build inside Odoo when the business process belongs there, and I use Django/DRF, PostgreSQL, Docker, and cloud tooling when the system needs a clean backend boundary.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="icon-box"><i data-lucide="boxes" aria-hidden="true"></i></div>
+            <h3>Odoo Module Development</h3>
+            <p>Custom business logic, ORM models, domain filters, QWeb reports, backend widgets, OWL components, and version-safe migrations.</p>
+            <div class="mini-list">
+              <span class="tag">v14-v19</span>
+              <span class="tag">Community</span>
+              <span class="tag">Enterprise</span>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="icon-box"><i data-lucide="server-cog" aria-hidden="true"></i></div>
+            <h3>Python APIs & Data</h3>
+            <p>Django REST Framework services, PostgreSQL-backed APIs, JWT auth, Google OAuth 2.0, RBAC, scheduled jobs, and batch pipelines.</p>
+            <div class="mini-list">
+              <span class="tag">DRF</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Celery</span>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="icon-box"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+            <h3>AI Business Workflows</h3>
+            <p>OpenAI, OpenRouter.ai, and Ollama integrations for lead summaries, smart replies, template generation, and offline inference.</p>
+            <div class="mini-list">
+              <span class="tag">OpenAI</span>
+              <span class="tag">OpenRouter</span>
+              <span class="tag">Ollama</span>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="icon-box"><i data-lucide="cloud-cog" aria-hidden="true"></i></div>
+            <h3>Deployment & Integrations</h3>
+            <p>Odoo.sh, Cloudpepper, VPS, Render, Docker Compose, AWS EC2, webhooks, mail servers, WhatsApp, Postmark, and 3CX VoIP.</p>
+            <div class="mini-list">
+              <span class="tag">Docker</span>
+              <span class="tag">AWS EC2</span>
+              <span class="tag">Webhooks</span>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="section-kicker">Experience</div>
+            <h2 class="section-title">Production work, migrations, and client-critical fixes.</h2>
+          </div>
+          <p class="section-copy reveal">My recent work spans ERP implementations, cross-version Odoo upgrades, SaaS backend APIs, and operational integrations where correctness matters as much as speed.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <strong>Webkul Software Pvt. Ltd.</strong>
+              Feb 2023 - Mar 2026<br>
+              Noida, UP, India
+              <div class="awards">
+                <span class="award"><i data-lucide="trophy" aria-hidden="true"></i>Best Performer</span>
+                <span class="award"><i data-lucide="badge-check" aria-hidden="true"></i>Perfect Customization Badge</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="timeline-title">Software Developer - Odoo & Python</h3>
+              <div class="timeline-company">ERP customization, migrations, integrations, and deployment ownership</div>
+              <ul class="timeline-list">
+                <li>Built 20+ custom Odoo modules and migrated 150+ modules across v14-v19, reducing average migration turnaround by about 30%.</li>
+                <li>Delivered customizations across Sales, Invoicing, Manufacturing, Inventory, CRM, Email Marketing, Purchase, subcontracting, kit BoMs, procurement rules, and QWeb reports.</li>
+                <li>Integrated OpenAI GPT, OpenRouter.ai, and local Ollama into Odoo workflows for smart lead summaries, reply suggestions, template generation, and content automation.</li>
+                <li>Connected WhatsApp, Postmark, and 3CX VoIP through REST and webhooks, including auto-created CRM leads from inbound calls for a 30-agent sales team.</li>
+                <li>Optimized PostgreSQL ORM queries and indexing for high-volume reporting, improving report generation speed by about 25%.</li>
+                <li>Managed Odoo.sh, Cloudpepper, Docker Compose, VPS, and AWS EC2 deployments with security groups, IAM roles, ELB, and EBS snapshot backups.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <strong>WareZip</strong>
+              Apr 2026 - May 2026<br>
+              Remote freelance
+            </div>
+            <div>
+              <h3 class="timeline-title">Freelance Python Developer</h3>
+              <div class="timeline-company">Warehouse SaaS backend services and API delivery</div>
+              <ul class="timeline-list">
+                <li>Built and maintained backend services for a warehouse management platform using Django, Django REST Framework, and PostgreSQL.</li>
+                <li>Designed secure REST APIs with JWT authentication, Google OAuth 2.0, and role-based access control for multi-role workflows.</li>
+                <li>Partnered with a React frontend team to ship 5+ API-driven features and reduce integration turnaround by about 30% per release.</li>
+                <li>Deployed services on a Linux Hostinger VPS with Gunicorn configuration and resolved production incidents while maintaining 99%+ API uptime.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="section-kicker">Selected Work</div>
+            <h2 class="section-title">Case studies shaped by business operations.</h2>
+          </div>
+          <p class="section-copy reveal">These projects highlight the kind of work I enjoy most: turning messy operational needs into reliable workflows, dashboards, automations, and integrations.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">AI + CRM</div>
+                <h3>AI-Powered Odoo CRM Suite</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="brain-circuit" aria-hidden="true"></i></div>
+            </div>
+            <p>Embedded OpenAI GPT and OpenRouter.ai inside Odoo CRM for intelligent lead summaries and smart reply suggestions, with Ollama support for offline AI inference inside Odoo workflows.</p>
+            <div class="impact">Added real-time VoIP transcription with Python SpeechRecognition and saved structured transcripts directly to CRM records.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">Odoo</span>
+              <span class="tag dark-tag">OpenAI</span>
+              <span class="tag dark-tag">OpenRouter</span>
+              <span class="tag dark-tag">Ollama</span>
+              <span class="tag dark-tag">3CX VoIP</span>
+              <span class="tag dark-tag">Python</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">Email Marketing</div>
+                <h3>OpenRouter Mail AI Studio</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="mails" aria-hidden="true"></i></div>
+            </div>
+            <p>Built an AI email marketing studio inside Odoo to generate full templates and subject lines from a prompt, enrich campaigns with Unsplash imagery, and edit generated content inline.</p>
+            <div class="impact">Implemented input sanitization, LLM response validation, and ORM-safe writes.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">OpenRouter</span>
+              <span class="tag dark-tag">QWeb</span>
+              <span class="tag dark-tag">OWL JS</span>
+              <span class="tag dark-tag">Unsplash API</span>
+            </div>
+            <div class="project-links">
+              <a class="text-link" href="https://github.com/tarang7651/openrouter_mail_ai" target="_blank" rel="noopener noreferrer">
+                Repository <i data-lucide="external-link" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">Data Pipeline</div>
+                <h3>Canna Mailing List Sync</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="database-zap" aria-hidden="true"></i></div>
+            </div>
+            <p>Batch-synchronized 10,000+ subscriber contacts from Drupal into Odoo with deduplication, list segmentation, validation, and CRON-driven background processing.</p>
+            <div class="impact">Reduced bounce risk and improved campaign deliverability through pre-sync cleanup.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">Odoo</span>
+              <span class="tag dark-tag">Drupal</span>
+              <span class="tag dark-tag">Python</span>
+              <span class="tag dark-tag">CRON</span>
+              <span class="tag dark-tag">PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">ERP Customization</div>
+                <h3>Sahitya Bhawan Odoo ERP</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="book-open-check" aria-hidden="true"></i></div>
+            </div>
+            <p>Automated commission calculations across yearly targets and quarterly slabs, added fiscal-year report filters, and configured automated WhatsApp and email stock alerts.</p>
+            <div class="impact">Replaced manual commission workflows with Odoo scheduled actions and rules.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">Odoo</span>
+              <span class="tag dark-tag">QWeb</span>
+              <span class="tag dark-tag">Scheduled Actions</span>
+              <span class="tag dark-tag">WhatsApp API</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">VoIP + CRM</div>
+                <h3>Caribbean Sign 3CX Integration</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="phone-call" aria-hidden="true"></i></div>
+            </div>
+            <p>Unified 3CX VoIP with Odoo CRM to auto-create and assign leads from inbound calls while mapping duration, caller ID, and timestamps to CRM records.</p>
+            <div class="impact">Removed manual call entry for a 30-agent sales operation.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">3CX VoIP</span>
+              <span class="tag dark-tag">Odoo CRM</span>
+              <span class="tag dark-tag">REST API</span>
+              <span class="tag dark-tag">Webhooks</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">Python API</div>
+                <h3>Visitor Management System</h3>
+              </div>
+              <div class="icon-box"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+            </div>
+            <p>Production-grade visitor management API with Django REST Framework, JWT authentication, RBAC, PostgreSQL persistence, and Render deployment.</p>
+            <div class="impact">Designed for secure multi-role visitor workflows and maintainable API delivery.</div>
+            <div class="project-stack">
+              <span class="tag dark-tag">Django</span>
+              <span class="tag dark-tag">DRF</span>
+              <span class="tag dark-tag">JWT</span>
+              <span class="tag dark-tag">PostgreSQL</span>
+              <span class="tag dark-tag">Render</span>
+            </div>
+            <div class="project-links">
+              <a class="text-link" href="https://vms-backend-lc9h.onrender.com/" target="_blank" rel="noopener noreferrer">
+                Live API <i data-lucide="external-link" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="section-kicker">Toolbox</div>
+            <h2 class="section-title">Practical stack for ERP, APIs, integrations, and cloud delivery.</h2>
+          </div>
+          <p class="section-copy reveal">This is the working set I reach for most often when building Odoo modules, Python APIs, data pipelines, and production deployments.</p>
+        </div>
+        <div class="stack-matrix reveal">
+          <div class="stack-group">
+            <h3>Odoo ERP</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">Module Development</span>
+              <span class="tag dark-tag">Migration v14-v19</span>
+              <span class="tag dark-tag">Odoo ORM</span>
+              <span class="tag dark-tag">QWeb</span>
+              <span class="tag dark-tag">OWL JS</span>
+              <span class="tag dark-tag">Odoo.sh</span>
+              <span class="tag dark-tag">Cloudpepper</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>Business Modules</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">Sales</span>
+              <span class="tag dark-tag">Invoicing</span>
+              <span class="tag dark-tag">Manufacturing</span>
+              <span class="tag dark-tag">Inventory</span>
+              <span class="tag dark-tag">CRM</span>
+              <span class="tag dark-tag">Email Marketing</span>
+              <span class="tag dark-tag">Purchase</span>
+              <span class="tag dark-tag">Subcontracting</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>Backend & Data</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">Python</span>
+              <span class="tag dark-tag">Django</span>
+              <span class="tag dark-tag">DRF</span>
+              <span class="tag dark-tag">FastAPI</span>
+              <span class="tag dark-tag">PostgreSQL</span>
+              <span class="tag dark-tag">Celery</span>
+              <span class="tag dark-tag">Redis</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>AI & Integrations</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">OpenAI GPT</span>
+              <span class="tag dark-tag">OpenRouter.ai</span>
+              <span class="tag dark-tag">Ollama</span>
+              <span class="tag dark-tag">WhatsApp API</span>
+              <span class="tag dark-tag">Postmark</span>
+              <span class="tag dark-tag">3CX VoIP</span>
+              <span class="tag dark-tag">Webhooks</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>Cloud & DevOps</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">Linux</span>
+              <span class="tag dark-tag">Docker</span>
+              <span class="tag dark-tag">Docker Compose</span>
+              <span class="tag dark-tag">Gunicorn</span>
+              <span class="tag dark-tag">AWS EC2</span>
+              <span class="tag dark-tag">IAM</span>
+              <span class="tag dark-tag">ELB</span>
+              <span class="tag dark-tag">EBS</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>Frontend Surfaces</h3>
+            <div class="stack-tags">
+              <span class="tag dark-tag">JavaScript</span>
+              <span class="tag dark-tag">OWL 2</span>
+              <span class="tag dark-tag">Chart.js</span>
+              <span class="tag dark-tag">React</span>
+              <span class="tag dark-tag">HTML</span>
+              <span class="tag dark-tag">QWeb Reports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section" id="credentials">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="section-kicker">Education & Credentials</div>
+            <h2 class="section-title">Computer science foundation, Python focus, REST API proof.</h2>
+          </div>
+          <p class="section-copy reveal">The portfolio story is practical and production-heavy, but it is backed by formal CS education and continued certification around Python and API development.</p>
+        </div>
+        <div class="credentials">
+          <div class="credential-panel reveal">
+            <div class="edu-item">
+              <div class="edu-title">B.Tech - Computer Science & Engineering</div>
+              <div class="edu-meta">IMS Engineering College, Ghaziabad | AKTU | 2019 - 2023</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-title">ICSE - Class XII</div>
+              <div class="edu-meta">Kanpur, Uttar Pradesh | 2018 - 2019</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-title">ICSE - Class X</div>
+              <div class="edu-meta">Kanpur, Uttar Pradesh | 2016 - 2017</div>
+            </div>
+          </div>
+          <div class="credential-panel reveal">
+            <div class="cert-item">
+              <div class="cert-title">REST API (Intermediate)</div>
+              <div class="cert-meta">HackerRank | 2026</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-title">Python Programming - A Practical Approach</div>
+              <div class="cert-meta">IIT Kanpur | 2022</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-title">Python Basic, Data Structures, OOP in Java, HTML</div>
+              <div class="cert-meta">Coursera / HackerRank | 2021</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-title">Python 3.5 Training</div>
+              <div class="cert-meta">EDUCBA | 2021</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <h2 class="contact-title">Need Odoo ERP, Python APIs, or AI automation done cleanly?</h2>
+            <p class="contact-copy">I am open to full-time roles, remote backend/Odoo work, and focused freelance engagements where production reliability matters.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:tarangkushwaha1234@gmail.com">
+                <i data-lucide="send" aria-hidden="true"></i>
+                Email Me
+              </a>
+              <a class="btn btn-secondary" href="assets/tarang-kushwaha-odoo-resume.pdf" download>
+                <i data-lucide="download" aria-hidden="true"></i>
+                Odoo Resume
+              </a>
+            </div>
+          </div>
+          <div class="contact-links reveal" aria-label="Contact links">
+            <a class="link-row" href="mailto:tarangkushwaha1234@gmail.com">
+              <span class="link-left"><i data-lucide="mail" aria-hidden="true"></i><span>tarangkushwaha1234@gmail.com</span></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="link-row" href="tel:+917651903315">
+              <span class="link-left"><i data-lucide="phone" aria-hidden="true"></i><span>+91 76519 03315</span></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="link-row" href="https://github.com/tarang7651" target="_blank" rel="noopener noreferrer">
+              <span class="link-left"><i data-lucide="code-xml" aria-hidden="true"></i><span>github.com/tarang7651</span></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="link-row" href="https://www.linkedin.com/in/tarang-kushwaha" target="_blank" rel="noopener noreferrer">
+              <span class="link-left"><i data-lucide="briefcase-business" aria-hidden="true"></i><span>linkedin.com/in/tarang-kushwaha</span></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="link-row" href="https://tarang7651.github.io" target="_blank" rel="noopener noreferrer">
+              <span class="link-left"><i data-lucide="globe" aria-hidden="true"></i><span>tarang7651.github.io</span></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> <strong>Tarang Kushwaha</strong></span>
+      <span>Odoo ERP | Python Backend | Kanpur, UP</span>
+      <span>Built for clarity and production trust</span>
     </div>
-  </div>
-  <div class="scroll-hint">scroll</div>
-</section>
+  </footer>
 
-<div class="divider full"></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <div class="section-label reveal"><span>01</span> Core Competencies</div>
-    <h2 class="sec-title reveal">Technical Skills</h2>
-    <div class="skills-table reveal">
-      <div class="skill-cell">
-        <div class="skill-cell-head"><span>⚙️</span>Backend</div>
-        <div class="chip-wrap">
-          <span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span><span class="chip">Odoo ORM</span><span class="chip">REST APIs</span><span class="chip">ERP Customization</span><span class="chip">Data Migration</span><span class="chip">Batch Processing</span>
-        </div>
-      </div>
-      <div class="skill-cell ai-cell">
-        <div class="skill-cell-head"><span>🤖</span>AI & Automation</div>
-        <div class="chip-wrap">
-          <span class="chip ai">AI Integration</span><span class="chip ai">Auto-Summarization</span><span class="chip ai">SpeechRecognition</span><span class="chip ai">Call Transcription</span>
-        </div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cell-head"><span>🚀</span>Odoo Platform</div>
-        <div class="chip-wrap">
-          <span class="chip">Odoo.sh</span><span class="chip">v17 / v18 / v19</span><span class="chip">Module Migration</span><span class="chip">Custom Modules</span><span class="chip">Public Controllers</span><span class="chip">Odoo Core Services</span>
-        </div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cell-head"><span>🏭</span>Odoo Modules</div>
-        <div class="chip-wrap">
-          <span class="chip">Manufacturing (MRP)</span><span class="chip">Survey</span><span class="chip">CRM</span><span class="chip">Inventory</span><span class="chip">Sales</span><span class="chip">Purchase</span><span class="chip">Documents</span><span class="chip">Email Marketing</span><span class="chip">Events</span><span class="chip">Contacts</span><span class="chip">Whatsapp</span><span class="chip">eLearning</span><span class="chip">Website</span>
-        </div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cell-head"><span>🎨</span>Frontend & Reports</div>
-        <div class="chip-wrap">
-          <span class="chip">QWeb Reports</span><span class="chip">Backend Editor</span><span class="chip">Website Editor</span><span class="chip">OWL JS</span><span class="chip">Backbone.js</span><span class="chip">Chart.js</span><span class="chip">Custom Widgets</span>
-        </div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cell-head"><span>🔗</span>Integrations & Data</div>
-        <div class="chip-wrap">
-          <span class="chip">Mailjet</span><span class="chip">WhatsApp API</span><span class="chip">Postmark</span><span class="chip">3CX VoIP</span><span class="chip">Bulk Data Sync</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">Git</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    if (window.lucide) {
+      window.lucide.createIcons({
+        attrs: {
+          "stroke-width": 1.8
+        }
+      });
+    }
 
-<div class="divider full"></div>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <div class="section-label reveal"><span>02</span> Where I've Worked</div>
-    <h2 class="sec-title reveal">Experience</h2>
-    <div class="exp-card reveal">
-      <div class="exp-top">
-        <div>
-          <div class="exp-role">Software Developer</div>
-          <div class="exp-co">Webkul Software Pvt. Ltd. &nbsp;·&nbsp; Noida, UP</div>
-        </div>
-        <div class="exp-dates">Feb 2023 — March 2026<br><span style="color:var(--lime);font-size:.63rem;letter-spacing:.06em;">3+ YEARS</span></div>
-      </div>
-      <div class="exp-awards">
-        <span class="award-tag">🏆 Best Performer of the Year</span>
-        <span class="award-tag">🎖️ Perfect Customization Badge</span>
-      </div>
+    const revealItems = document.querySelectorAll(".reveal");
+    if (!reducedMotion && "IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
 
-      <!-- AI & Intelligence -->
-      <div class="exp-section">
-        <div class="exp-section-title ai-section">AI & Intelligent Feature Integration</div>
-        <ul class="exp-points">
-          <li class="ai-point">Integrated <span class="hl-ai">OpenAI GPT API</span> directly into Odoo to power smart features including AI-assisted CRM notes, automated lead summaries, intelligent reply suggestions, and context-aware content generation inside business workflows.</li>
-          <li class="ai-point">Connected <span class="hl-ai">AI language models</span> to Odoo's backend editor and form views, enabling users to generate, refine, and auto-fill content without leaving the ERP interface.</li>
-          <li class="ai-point">Implemented <span class="hl-ai">real-time call transcription</span> using Python's SpeechRecognition library — allowing VoIP calls to be automatically transcribed and saved to CRM records, removing manual note-taking entirely.</li>
-        </ul>
-      </div>
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("show"));
+    }
 
-      <!-- Bulk Data & Sync -->
-      <div class="exp-section">
-        <div class="exp-section-title">Large-Scale Data Handling & Sync</div>
-        <ul class="exp-points">
-          <li>Diagnosed and resolved a critical <span class="hl">Mailjet bulk sync failure</span> caused by payload size limits and API rate throttling on large contact datasets.</li>
-          <li>Architected a <span class="hl">batch processing pipeline</span> to chunk large contact lists into controlled segments, with retry logic, error logging, and sync-status tracking per batch.</li>
-          <li>Implemented <span class="hl">deduplication and validation layers</span> pre-sync to clean data before Mailjet ingestion, reducing bounce rates and failed deliveries significantly.</li>
-          <li>Built a <span class="hl">CRON-based scheduler</span> to handle background batch jobs for email contact syncing, queue management, and automated failure recovery.</li>
-        </ul>
-      </div>
+    const countTargets = document.querySelectorAll("[data-count]");
+    let countsStarted = false;
 
-      <!-- ERP & Module Work -->
-      <div class="exp-section">
-        <div class="exp-section-title">Odoo ERP & Platform Development</div>
-        <ul class="exp-points">
-          <li>Migrated, refactored, and optimized <span class="hl">150+ Odoo modules</span> across versions v17, v18, and v19.</li>
-          <li>Deployed and managed projects on <span class="hl">Odoo.sh</span> — handling branch environments, staging, and production pipelines.</li>
-          <li>Performed large-scale <span class="hl">data migrations</span> across Odoo versions, ensuring data integrity and zero-loss transitions.</li>
-          <li>Leveraged <span class="hl">Odoo core services</span> (mail.thread, ir.rule, ir.actions, res.config.settings) to build deeply integrated custom features for newer versions.</li>
-        </ul>
-      </div>
+    function animateCount(el) {
+      const target = Number(el.dataset.count);
+      const duration = 1200;
+      const start = performance.now();
 
-      <!-- Manufacturing & Modules -->
-      <div class="exp-section">
-        <div class="exp-section-title">Manufacturing, Survey & Module Customization</div>
-        <ul class="exp-points">
-          <li>Customized the <span class="hl">Manufacturing (MRP)</span> module to meet client-specific production workflows, BOM structures, and work center logic.</li>
-          <li>Integrated manufacturing operations with inventory, sales, and accounting for end-to-end ERP automation.</li>
-          <li>Implemented and extended the <span class="hl">Survey module</span> with custom scoring logic, conditional flows, and dynamic result reporting.</li>
-          <li>Built custom features across CRM, Inventory, Sales, Purchase, and Accounting modules tailored to client requirements.</li>
-        </ul>
-      </div>
+      function frame(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(eased * target);
+        el.textContent = target >= 1000 ? value.toLocaleString("en-IN") : value;
 
-      <!-- Reports & Editors -->
-      <div class="exp-section">
-        <div class="exp-section-title">Reports, Backend & Website Editor</div>
-        <ul class="exp-points">
-          <li>Designed heavily customized <span class="hl">QWeb PDF & HTML reports</span> — multilingual, multi-layout, and fully branded to client specifications.</li>
-          <li>Extended the <span class="hl">Odoo backend editor</span> with custom building blocks, dynamic fields, and reusable internal content snippets.</li>
-          <li>Enhanced the <span class="hl">Odoo website frontend editor</span> with custom drag-and-drop snippets, widgets, and theme-level overrides.</li>
-          <li>Integrated <span class="hl">Postmark, 3CX VoIP & WhatsApp APIs</span> for automated communication, CRM lead creation, and event-triggered messaging.</li>
-        </ul>
-      </div>
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          el.textContent = target.toLocaleString("en-IN");
+        }
+      }
 
-    </div>
-  </div>
-</section>
+      requestAnimationFrame(frame);
+    }
 
-<div class="divider full"></div>
+    function startCounts() {
+      if (countsStarted) return;
+      countsStarted = true;
+      countTargets.forEach((el) => {
+        if (el.textContent.trim() === "0") {
+          animateCount(el);
+        }
+      });
+    }
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="section-label reveal"><span>03</span> Selected Work</div>
-    <h2 class="sec-title reveal">Projects</h2>
-    <div class="proj-grid reveal">
+    if (!reducedMotion && "IntersectionObserver" in window) {
+      const countObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          startCounts();
+          countObserver.disconnect();
+        }
+      }, { threshold: 0.3 });
 
-      <div class="proj-card feat ai-card">
-        <div class="proj-num">01</div>
-        <div class="proj-ico">🤖</div>
-        <div class="proj-name">AI-Powered Odoo Integration Suite</div>
-        <div class="proj-desc">Integrated OpenAI GPT into Odoo CRM and backend editor for intelligent lead summaries, smart reply suggestions, and context-aware content generation. Also implemented real-time VoIP call transcription using Python's SpeechRecognition library — saving transcripts directly to CRM records, eliminating manual note-taking.</div>
-        <div class="proj-stack">
-          <span class="stack-tag ai">OpenAI API</span><span class="stack-tag ai">SpeechRecognition</span><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">OWL JS</span><span class="stack-tag">3CX VoIP</span>
-        </div>
-      </div>
+      const proof = document.querySelector(".proof");
+      if (proof) countObserver.observe(proof);
+    } else {
+      countTargets.forEach((el) => {
+        const value = Number(el.dataset.count);
+        el.textContent = value.toLocaleString("en-IN");
+      });
+    }
 
-      <div class="proj-card ai-card">
-        <div class="proj-num">02</div>
-        <div class="proj-ico">🔥</div>
-        <div class="proj-name">OpenRouter Mail AI Studio</div>
-        <div class="proj-desc">AI-powered email generation and marketing enhancement platform built for Odoo. Integrated 300+ AI models via OpenRouter into Email Marketing workflows, added AI-assisted template generation in Mail Composer, and enabled dynamic marketing image generation using Unsplash API.</div>
-        <div class="proj-stack">
-          <span class="stack-tag ai">OpenRouter API</span><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">OWL JS</span><span class="stack-tag">QWeb</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Unsplash API</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link" href="https://github.com/tarang7651/openrouter_mail_ai" target="_blank" rel="noopener noreferrer">Repository</a>
-          <a class="proj-link" href="https://github.com/user-attachments/assets/8c602dcc-a40c-4891-8fde-98555569711d" target="_blank" rel="noopener noreferrer">Walkthrough</a>
-        </div>
-      </div>
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-      <div class="proj-card">
-        <div class="proj-num">03</div>
-        <div class="proj-ico">🏢</div>
-        <div class="proj-name">Visitor Management System (VMS)</div>
-        <div class="proj-desc">Backend-powered Visitor Management System with secure auth, role-based access, RESTful architecture, and PostgreSQL persistence. Built with Django + DRF and deployed on Render for production-ready API delivery.</div>
-        <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">REST APIs</span><span class="stack-tag">Render</span></div>
-        <div class="proj-links">
-          <a class="proj-link" href="https://vms-backend-lc9h.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-          <a class="proj-link" href="https://github.com/user-attachments/assets/5f35b4ff-ae35-4d07-b761-2e8b767fcce5" target="_blank" rel="noopener noreferrer">Walkthrough</a>
-        </div>
-      </div>
+    function updateActiveLink() {
+      let current = "";
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 150) {
+          current = section.id;
+        }
+      });
 
-      <div class="proj-card">
-        <div class="proj-num">04</div>
-        <div class="proj-ico">📊</div>
-        <div class="proj-name">Mailjet Bulk Sync Engine</div>
-        <div class="proj-desc">Resolved a large-scale Mailjet contact sync failure by designing a batch processing pipeline with chunked payloads, retry logic, deduplication, validation layers, and CRON-based background scheduling for zero-loss contact delivery.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">Mailjet API</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">CRON</span></div>
-      </div>
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === "#" + current;
+        link.classList.toggle("active", isActive);
+      });
+    }
 
-      <div class="proj-card">
-        <div class="proj-num">05</div>
-        <div class="proj-ico">📚</div>
-        <div class="proj-name">Sahitya Bhawan — ERP Customization</div>
-        <div class="proj-desc">Full Odoo ERP with FY-based record grouping, commission models with quarterly slabs, automated WhatsApp &amp; email stock alerts, and an enhanced dynamic product configurator.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">QWeb</span><span class="stack-tag">WhatsApp API</span><span class="stack-tag">PostgreSQL</span></div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-num">06</div>
-        <div class="proj-ico">📞</div>
-        <div class="proj-name">Caribbean Sign — VoIP CRM</div>
-        <div class="proj-desc">Integrated 3CX VoIP with Odoo CRM to auto-create leads from incoming calls and map call metadata to CRM records for better sales pipeline visibility.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Python</span><span class="stack-tag">REST API</span><span class="stack-tag">3CX VoIP</span></div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-num">07</div>
-        <div class="proj-ico">📧</div>
-        <div class="proj-name">Canna — Mass Mailing Platform</div>
-        <div class="proj-desc">Company email templates with opt-in workflows, CRON-based Mailjet validation integrated with Drupal, and a dynamic snippet editor for the Odoo website editor.</div>
-        <div class="proj-stack"><span class="stack-tag">Odoo</span><span class="stack-tag">Mailjet</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Drupal</span></div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-num">08</div>
-        <div class="proj-ico">📝</div>
-        <div class="proj-name">Blog Platform + Coin Counter ML</div>
-        <div class="proj-desc">Full-stack Django blog with JWT auth and role-based access deployed on PythonAnywhere. Plus a CNN model to classify and sum Indian currency coin values from images.</div>
-        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">CNN</span><span class="stack-tag ai">Machine Learning</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider full"></div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="wrap">
-    <div class="section-label reveal"><span>04</span> Academic Background</div>
-    <h2 class="sec-title reveal">Education</h2>
-    <div class="reveal">
-      <div class="edu-row">
-        <div class="edu-score">85.54%</div>
-        <div><div class="edu-deg">B.Tech — Computer Science &amp; Engineering</div><div class="edu-school">IMS Engineering College, Ghaziabad · AKTU</div></div>
-        <div class="edu-yr">2019 – 2023</div>
-      </div>
-      <div class="edu-row">
-        <div class="edu-score">88.83%</div>
-        <div><div class="edu-deg">ICSE — Class XII</div><div class="edu-school">Kanpur, Uttar Pradesh</div></div>
-        <div class="edu-yr">2018 – 2019</div>
-      </div>
-      <div class="edu-row">
-        <div class="edu-score">86%</div>
-        <div><div class="edu-deg">ICSE — Class X</div><div class="edu-school">Kanpur, Uttar Pradesh</div></div>
-        <div class="edu-yr">2016 – 2017</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider full"></div>
-
-<!-- CERTS -->
-<section id="certs">
-  <div class="wrap">
-    <div class="section-label reveal"><span>05</span> Credentials</div>
-    <h2 class="sec-title reveal">Certifications</h2>
-    <div class="cert-grid reveal">
-      <div class="cert-card"><div class="cert-ico">🏛️</div><div><div class="cert-name">Python — A Practical Approach</div><div class="cert-by">IIT Kanpur</div></div></div>
-      <div class="cert-card"><div class="cert-ico">🐍</div><div><div class="cert-name">Python Basic</div><div class="cert-by">HackerRank</div></div></div>
-      <div class="cert-card"><div class="cert-ico">🧮</div><div><div class="cert-name">Data Structures</div><div class="cert-by">Coursera</div></div></div>
-      <div class="cert-card"><div class="cert-ico">☕</div><div><div class="cert-name">OOP in Java</div><div class="cert-by">Coursera</div></div></div>
-      <div class="cert-card"><div class="cert-ico">🌐</div><div><div class="cert-name">HTML Certification</div><div class="cert-by">HackerRank</div></div></div>
-      <div class="cert-card"><div class="cert-ico">📘</div><div><div class="cert-name">Python 3.5 Training</div><div class="cert-by">EDUCBA</div></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider full"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-left reveal-l">
-      <h2>Let's Build<br><span>Together.</span></h2>
-      <p>Open to full-time roles, freelance contracts, and interesting backend or AI engineering challenges. Let's create something great.</p>
-    </div>
-    <div class="contact-right reveal">
-      <a href="mailto:tarangkushwaha1234@gmail.com" class="c-link"><div class="c-link-left"><span class="c-ico">✉</span>tarangkushwaha1234@gmail.com</div><span class="c-arrow">→</span></a>
-      <a href="tel:+917651903315" class="c-link"><div class="c-link-left"><span class="c-ico">📱</span>+91 76519 03315</div><span class="c-arrow">→</span></a>
-      <a href="https://github.com/tarang7651" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-link-left"><span class="c-ico">🐙</span>GitHub Profile</div><span class="c-arrow">→</span></a>
-      <a href="https://linkedin.com" target="_blank" class="c-link"><div class="c-link-left"><span class="c-ico">💼</span>LinkedIn Profile</div><span class="c-arrow">→</span></a>
-      <a href="https://hackerrank.com" target="_blank" class="c-link"><div class="c-link-left"><span class="c-ico">💻</span>HackerRank Profile</div><span class="c-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<div class="divider full"></div>
-<footer class="wrap">
-  <span>© 2025 <em>Tarang Kushwaha</em></span>
-  <span>Software Engineer · Kanpur 🇮🇳</span>
-  <span>Built with precision</span>
-</footer>
-
-<script>
-const dot=document.getElementById('dot'),ring=document.getElementById('ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
-document.querySelectorAll('a,button,.chip').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{ring.style.width='44px';ring.style.height='44px';ring.style.borderColor='rgba(200,241,53,.7)';});
-  el.addEventListener('mouseleave',()=>{ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(200,241,53,.35)';});
-});
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('show'),i*55);});
-},{threshold:.1});
-document.querySelectorAll('.reveal,.reveal-l').forEach(el=>ro.observe(el));
-function countUp(el,to,dur=1300){
-  let v=0,step=to/dur*16;
-  const t=setInterval(()=>{v=Math.min(v+step,to);el.textContent=Math.floor(v);if(v>=to)clearInterval(t);},16);
-}
-const co=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.count').forEach(el=>countUp(el,+el.dataset.to));co.disconnect();}});
-},{threshold:.4});
-const hr=document.querySelector('.hero-right');
-if(hr)co.observe(hr);
-const secs=document.querySelectorAll('section[id]');
-const navAs=document.querySelectorAll('.nav-pill a');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
-  navAs.forEach(a=>{const on=a.getAttribute('href')==='#'+cur;a.style.color=on?'var(--lime)':'';a.style.background=on?'var(--raised)':'';});
-},{passive:true});
-</script>
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+  </script>
 </body>
 </html>
